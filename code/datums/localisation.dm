@@ -33,7 +33,7 @@ datum/localisation_global
 
 			ids[l1] = l2
 
-			text = copytext(text, findtext(text, "\"", 2) + min(2, lentext(text)-findtext(text, "\"", 2)) )
+			text = copytext(text, findtext(text, "\"", 2) + min(2, length(text)-findtext(text, "\"", 2)) )
 
 
 

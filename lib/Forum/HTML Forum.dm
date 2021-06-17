@@ -62,12 +62,12 @@ mob/proc/Display_HTML_Forum()
 				for(var/obj/Forums/Forum/Fg in Forum_List)
 					if(Fg.language != src.switch_language || Fg.parent || Fg.section != sect.section)	continue
 					HTML += "<table><tr><td align = left valign = middle>  <a href='?reference=ViewForum;forum=[Fg.MyForum_ID]'><FONT FACE=Arial COLOR=#404000 SIZE=+1>[sanitize_lang(Fg.name)]</FONT></a><td>"
-					if(Fg.time_update)	HTML += "<td align = right valign = middle>[probels(40-lentext(Fg.name))]UPD: <a href='?reference=Thread;messageID=[Fg.last_topic.MyID];forum=[Fg.MyForum_ID]'>[sanitize_lang(Fg.last_topic.name)]</a></td>"
+					if(Fg.time_update)	HTML += "<td align = right valign = middle>[probels(40-length(Fg.name))]UPD: <a href='?reference=Thread;messageID=[Fg.last_topic.MyID];forum=[Fg.MyForum_ID]'>[sanitize_lang(Fg.last_topic.name)]</a></td>"
 					HTML += "</tr><br><tr>"
 					var/p = 0
 					for(var/obj/Forums/Forum/child in Forum_List)
 						if(child.parent == Fg)
-							p += lentext(child.name)+3
+							p += length(child.name)+3
 							HTML += "<td align = left valign = middle>   <a href='?reference=ViewForum;forum=[child.MyForum_ID]'><FONT SIZE=2>[sanitize_lang(child.name)]</FONT></a></td>"
 					if(Fg.time_update)	HTML += "<td align = right valign = middle>[probels(40-p)][time2text(Fg.time_update)] by [Fg.last_author]</td>"
 					HTML += "</tr></table><br>"
@@ -94,7 +94,7 @@ mob/proc/Display_HTML_SubForum()
 		for(var/obj/Forums/Forum/Fg in Forum_List)//Строим форумы
 			if(Fg.parent != F)	continue
 			HTML += "<table><tr><td align = left valign = middle>  <a href='?reference=ViewForum;forum=[Fg.MyForum_ID]'><FONT FACE=Arial COLOR=#404000 SIZE=+1>[sanitize_lang(Fg.name)]</FONT></a><td>"
-			if(Fg.time_update)	HTML += "<td align = right valign = middle>[probels(40-lentext(Fg.name))]UPD: <a href='?reference=Thread;messageID=[Fg.last_topic.MyID];forum=[Fg.MyForum_ID]'>[sanitize_lang(Fg.last_topic.name)]</a></td>"
+			if(Fg.time_update)	HTML += "<td align = right valign = middle>[probels(40-length(Fg.name))]UPD: <a href='?reference=Thread;messageID=[Fg.last_topic.MyID];forum=[Fg.MyForum_ID]'>[sanitize_lang(Fg.last_topic.name)]</a></td>"
 			HTML += "</tr><br><tr>"
 			if(Fg.time_update)	HTML += "<td align = right valign = middle>[probels(40)][time2text(Fg.time_update)] by [Fg.last_author]</td>"
 			HTML += "</tr></table><br>"

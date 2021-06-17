@@ -737,7 +737,6 @@ datum/preferences
 		dat += "</br><b>Has a horn and can make magic \[[total_SP]\].</b>"
 
 
-	var/there_will_be_set_white_list
 	//var/restricted = 0
 	//if(config.usealienwhitelist) //If we're using the whitelist, make sure to check it!
 	//	if(!(current_species.flags & CAN_JOIN))

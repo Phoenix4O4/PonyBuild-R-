@@ -9,7 +9,7 @@
 
 proc/sanitize_lang(var/text)//Костыль для сломанных букв
 	var/TEXT = ""
-	for(var/k = 1, k <= lentext(text), k++)
+	for(var/k = 1, k <= length(text), k++)
 		if(copytext(text, k, k+1) != "я")	TEXT += copytext(text, k, k+1)
 		else	TEXT += "Я"
 	return TEXT

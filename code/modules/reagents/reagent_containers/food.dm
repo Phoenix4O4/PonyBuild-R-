@@ -71,11 +71,11 @@ proc/taste(var/datum/reagents/R, var/byte_size=5)
 	if(amount > tmp_R.total_volume)	amount = R.total_volume
 	tmp_R.trans_to(B, amount)
 
-	var/pungent = 0//острый
-	var/sweet = 0//сладкий
-	var/salty = 0//соленый
-	var/sour = 0//кислый
-	var/bitter = 0//Горький
+	var/pungent = 0//пїЅпїЅпїЅпїЅпїЅпїЅ
+	var/sweet = 0//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	var/salty = 0//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	var/sour = 0//пїЅпїЅпїЅпїЅпїЅпїЅ
+	var/bitter = 0//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	var/datum/reagents/BR = B.reagents
 	for(var/datum/reagent/reagent in BR.reagent_list)
 		pungent += reagent.pungent * reagent.volume
@@ -134,7 +134,7 @@ proc/taste(var/datum/reagents/R, var/byte_size=5)
 	if(salty == 2)			answer = "salty "
 	else if(pungent == 1)	answer = "brackish "
 
-	if(lentext(answer))
+	if(length(answer))
 		answer += "tasty"
 		if(sour || bitter)	answer += " with "
 

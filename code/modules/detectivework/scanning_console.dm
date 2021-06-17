@@ -8,8 +8,6 @@
 	var/scan_progress = -1
 	var/obj/item/scanning
 	var/datum/data/record/forensic/current
-
-	var/list/filters = list()
 	var/list/current_list = list()
 
 	var/list/files = list()
